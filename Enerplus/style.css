@@ -1,0 +1,1159 @@
+/* CSS Reset & Variables */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+:root {
+    --primary-color: #0f2b46;
+    --secondary-color: #1a5f43;
+    --accent-color: #e67e22;
+    --text-dark: #2d3748;
+    --text-light: #f7fafc;
+    --bg-light: #f4f7f6;
+    --transition: all 0.3s ease;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    color: var(--text-dark);
+    line-height: 1.6;
+    background-color: #fff;
+}
+
+a {
+    color: inherit;
+}
+
+img {
+    max-width: 100%;
+    display: block;
+}
+
+/* Navigation Bar */
+header {
+    background-color: #fff;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.navbar {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 2rem;
+}
+
+.logo {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.75rem;
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: var(--primary-color);
+    text-decoration: none;
+}
+
+.logo {
+    flex-shrink: 0;
+}
+
+.logo img {
+    width: clamp(46px, 4vw, 56px);
+    height: auto;
+    object-fit: contain;
+    display: block;
+}
+
+.logo-text {
+    font-size: clamp(1.1rem, 2vw, 1.6rem);
+    letter-spacing: -0.02em;
+}
+
+.nav-links {
+    display: flex;
+    align-items: center;
+    list-style: none;
+    gap: 2rem;
+}
+
+.nav-links li {
+    list-style: none;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: var(--text-dark);
+    font-weight: 500;
+    transition: var(--transition);
+}
+
+.nav-links a:hover,
+.nav-links a.active {
+    color: var(--secondary-color);
+}
+
+/* Mobile Menu Toggle */
+.menu-toggle {
+    display: none;
+    flex-direction: column;
+    gap: 5px;
+    cursor: pointer;
+    background: none;
+    border: none;
+    padding: 0.25rem;
+}
+
+.menu-toggle span {
+    width: 25px;
+    height: 3px;
+    background-color: var(--primary-color);
+    transition: var(--transition);
+}
+
+/* Hero Banner */
+.hero {
+    background: linear-gradient(rgba(15, 43, 70, 0.85), rgba(15, 43, 70, 0.85)), url('assets/enerplus-testkits.jpeg') no-repeat center center/cover;
+    color: var(--text-light);
+    text-align: center;
+    padding: 8rem 2rem;
+}
+
+.hero-content {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.hero h1 {
+    font-size: clamp(2.2rem, 4vw, 3.5rem);
+    margin-bottom: 1.5rem;
+    font-weight: 700;
+}
+
+.hero p {
+    font-size: 1.25rem;
+    max-width: 600px;
+    margin: 0 auto 2rem auto;
+}
+
+.btn,
+.primary-btn,
+.btn-order {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--secondary-color);
+    color: white;
+    padding: 0.75rem 2rem;
+    border-radius: 4px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: var(--transition);
+    border: none;
+    cursor: pointer;
+}
+
+.btn:hover,
+.primary-btn:hover,
+.btn-order:hover {
+    background-color: #134631;
+    transform: translateY(-2px);
+}
+
+/* Content Sections */
+.section {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 5rem 2rem;
+}
+
+.section-title {
+    text-align: center;
+    font-size: clamp(1.8rem, 3vw, 2.4rem);
+    color: var(--primary-color);
+    margin-bottom: 3rem;
+}
+
+.section-subtitle {
+    text-align: center;
+    color: var(--text-dark);
+    margin-bottom: 2rem;
+}
+
+/* Info Grid / Cards */
+.grid,
+.team-grid,
+.ops-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 2.5rem;
+}
+
+.card,
+.team-card,
+.ops-card {
+    background-color: var(--bg-light);
+    padding: 2.5rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+    transition: var(--transition);
+    border-top: 4px solid var(--primary-color);
+}
+
+.card:hover,
+.team-card:hover,
+.ops-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 15px rgba(0,0,0,0.1);
+}
+
+.card h3,
+.team-card h3,
+.ops-card h3 {
+    color: var(--primary-color);
+    margin-bottom: 1rem;
+    font-size: 1.35rem;
+}
+
+.card p,
+.team-card p,
+.ops-card p {
+    color: #4a5568;
+    margin-bottom: 1.5rem;
+}
+
+.card-link {
+    color: var(--secondary-color);
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.filter-section,
+.filter-buttons {
+    max-width: 900px;
+    margin: 0 auto 2rem;
+}
+
+.search-input {
+    width: 100%;
+    border: 1px solid rgba(15, 43, 70, 0.2);
+    background: #fff;
+    border-radius: 8px;
+    padding: 0.9rem 1rem;
+    font-size: 1rem;
+}
+
+.filter-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+    justify-content: center;
+}
+
+.filter-btn {
+    background: #edf2f7;
+    color: var(--primary-color);
+    border: 1px solid rgba(15, 43, 70, 0.12);
+    border-radius: 999px;
+    padding: 0.65rem 1rem;
+    cursor: pointer;
+    font-weight: 600;
+    transition: var(--transition);
+}
+
+.filter-btn.active {
+    background: var(--primary-color);
+    color: #fff;
+}
+
+.jobs-list {
+    display: grid;
+    gap: 1rem;
+}
+
+.job-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    background: #fff;
+    border: 1px solid rgba(15, 43, 70, 0.12);
+    border-radius: 12px;
+    padding: 1.35rem 1.5rem;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.02);
+}
+
+.job-info {
+    flex: 1;
+}
+
+.job-row h3 {
+    color: var(--primary-color);
+    margin-bottom: 0.5rem;
+}
+
+.job-meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    color: var(--text-dark);
+    font-size: 0.95rem;
+}
+
+.ops-card {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 0;
+    overflow: hidden;
+}
+
+.ops-card-body {
+    padding: 2rem 1.5rem 1rem;
+}
+
+.ops-badge {
+    display: inline-block;
+    background: rgba(26, 95, 67, 0.1);
+    color: var(--secondary-color);
+    padding: 0.35rem 0.7rem;
+    border-radius: 999px;
+    font-size: 0.74rem;
+    font-weight: 700;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    margin-bottom: 1rem;
+}
+
+.product-specs {
+    background: rgba(15, 43, 70, 0.05);
+    color: var(--text-dark);
+    border-radius: 8px;
+    padding: 0.75rem 1rem;
+    margin-top: 1rem;
+    font-size: 0.92rem;
+}
+
+.btn-order {
+    margin: 0 1.5rem 1.5rem;
+}
+
+.featured-products-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 1.5rem;
+}
+
+.featured-products-grid .ops-card {
+    min-width: 0;
+}
+
+.featured-products-grid .ops-card-body {
+    padding: 1.5rem 1.25rem 1rem;
+}
+
+.featured-products-grid .ops-card-body h3 {
+    overflow-wrap: anywhere;
+}
+
+.featured-products-cta {
+    margin-top: 2rem;
+    text-align: center;
+}
+
+@media (max-width: 850px) {
+    .featured-products-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
+
+@media (max-width: 560px) {
+    .featured-products-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+.timeline-section,
+.section-values {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2rem 4rem;
+}
+
+.timeline-container {
+    display: grid;
+    gap: 1.5rem;
+}
+
+.timeline-item {
+    display: grid;
+    grid-template-columns: 120px 1fr;
+    gap: 1.5rem;
+    align-items: start;
+    background: var(--bg-light);
+    border-radius: 12px;
+    padding: 1.5rem;
+}
+
+.timeline-year {
+    font-size: 1.5rem;
+    font-weight: 800;
+    color: var(--secondary-color);
+}
+
+.timeline-content h3 {
+    color: var(--primary-color);
+    margin-bottom: 0.5rem;
+}
+
+.values-list {
+    list-style: none;
+    display: grid;
+    gap: 1rem;
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 0;
+}
+
+.values-list li {
+    background: #fff;
+    border: 1px solid rgba(15, 43, 70, 0.08);
+    border-radius: 12px;
+    padding: 1rem 1.25rem;
+}
+
+.team-grid {
+    margin-top: 2rem;
+}
+
+.team-card {
+    text-align: center;
+    padding: 2rem 1.5rem;
+}
+
+.team-avatar {
+    width: 70px;
+    height: 70px;
+    margin: 0 auto 1rem;
+    border-radius: 50%;
+    display: grid;
+    place-items: center;
+    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+    color: #fff;
+    font-weight: 700;
+}
+
+/* Footer & Hotlines */
+footer {
+    background: linear-gradient(180deg, var(--primary-color) 0%, #0b223d 100%);
+    color: var(--text-light);
+    padding: 2.5rem 1.5rem 1.25rem;
+    margin-top: 4rem;
+    border-top: 1px solid rgba(255,255,255,0.08);
+}
+
+.footer-container {
+    max-width: 1000px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+    gap: 1.5rem 2rem;
+    align-items: start;
+    border-bottom: 1px solid rgba(255,255,255,0.1);
+    padding-bottom: 1.5rem;
+}
+
+.footer-info {
+    color: #cbd5e0;
+    line-height: 1.6;
+    max-width: 260px;
+}
+
+.footer-info span {
+    display: block;
+    max-width: 280px;
+}
+
+.footer-info p {
+    margin: 0 0 1rem;
+}
+
+.footer-info a,
+.footer-bottom a {
+    color: #fff;
+    text-decoration: underline;
+}
+
+.footer-col {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.footer-col h4 {
+    margin-bottom: 1.5rem;
+    font-size: 1.1rem;
+    color: #fff;
+}
+
+.footer-col ul {
+    list-style: none;
+}
+
+.footer-col ul li {
+    margin-bottom: 0.75rem;
+}
+
+.footer-col ul li a {
+    color: #cbd5e0;
+    text-decoration: none;
+    transition: var(--transition);
+}
+
+.footer-col ul li a:hover {
+    color: #fff;
+}
+
+.award-box {
+    max-width: 180px;
+    width: 100%;
+}
+
+.award-box img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.hotline-box {
+    background-color: rgba(255,255,255,0.05);
+    padding: 1rem;
+    border-radius: 4px;
+    margin-bottom: 1rem;
+}
+
+.hotline-title {
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: #a0aec0;
+}
+
+.hotline-number {
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: var(--accent-color);
+}
+
+.chat-popover {
+    position: fixed;
+    right: 1.25rem;
+    bottom: 1.25rem;
+    width: min(360px, calc(100vw - 1.5rem));
+    background: #fff;
+    border: 1px solid rgba(15, 43, 70, 0.1);
+    border-radius: 14px;
+    box-shadow: 0 18px 45px rgba(0, 0, 0, 0.18);
+    z-index: 1100;
+    overflow: hidden;
+}
+
+.chat-popover[aria-hidden="true"] {
+    display: none;
+}
+
+.chat-launcher {
+    position: fixed;
+    right: 1.5rem;
+    bottom: 1.5rem;
+    z-index: 1200;
+    background: var(--secondary-color);
+    color: #fff;
+    border: none;
+    border-radius: 999px;
+    padding: 0.9rem 1.3rem;
+    font: inherit;
+    font-weight: 700;
+    cursor: pointer;
+    box-shadow: 0 12px 28px rgba(15, 43, 70, 0.2);
+}
+
+.chat-launcher:hover {
+    background: #134631;
+}
+
+.chat-popover-header {
+    background: rgba(15, 43, 70, 0.04);
+    border-bottom: 1px solid rgba(15, 43, 70, 0.08);
+    padding: 1rem 1.25rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.kicker {
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    font-size: 0.72rem;
+    color: var(--secondary-color);
+    font-weight: 700;
+    margin-bottom: 0.25rem;
+}
+
+.chat-popover-header h2 {
+    color: var(--primary-color);
+    font-size: 1.5rem;
+}
+
+.chat-close {
+    background: transparent;
+    border: none;
+    color: var(--primary-color);
+    font-size: 2rem;
+    line-height: 1;
+    cursor: pointer;
+}
+
+.form {
+    display: grid;
+    gap: 1rem;
+    padding: 1.25rem;
+}
+
+.form label {
+    display: grid;
+    gap: 0.45rem;
+    color: var(--primary-color);
+    font-weight: 600;
+}
+
+.form input,
+.form textarea {
+    width: 100%;
+    border: 1px solid rgba(15, 43, 70, 0.16);
+    border-radius: 8px;
+    padding: 0.75rem 0.9rem;
+    font: inherit;
+    resize: vertical;
+}
+
+.message {
+    padding: 0 1.25rem 1.25rem;
+    color: var(--secondary-color);
+    font-weight: 600;
+}
+
+.footer-bottom {
+    max-width: 1200px;
+    margin: 2rem auto 0 auto;
+    text-align: center;
+    font-size: 0.9rem;
+    color: #a0aec0;
+}
+
+.footer-bottom p {
+    margin: 0;
+    line-height: 1.8;
+}
+
+@media (max-width: 768px) {
+    .navbar {
+        position: relative;
+    }
+
+    .menu-toggle {
+        display: flex;
+    }
+
+    .nav-links {
+        display: none;
+        position: absolute;
+        top: calc(100% + 0.5rem);
+        right: 1rem;
+        left: 1rem;
+        flex-direction: column;
+        padding: 1rem;
+        background: #fff;
+        border: 1px solid rgba(15, 43, 70, 0.08);
+        border-radius: 12px;
+        box-shadow: 0 12px 24px rgba(0,0,0,0.08);
+    }
+
+    .nav-links.active {
+        display: flex;
+    }
+
+    .job-row,
+    .timeline-item {
+        grid-template-columns: 1fr;
+        display: grid;
+    }
+
+    .hero {
+        padding: 6rem 1rem;
+    }
+
+    .section,
+    .timeline-section,
+    .section-values {
+        padding-left: 1rem;
+        padding-right: 1rem;
+    }
+
+    .footer-container {
+        gap: 2rem;
+    }
+
+    .footer-bottom {
+        font-size: 0.8rem;
+    }
+}
+
+
+/* Responsive Adaptive Viewports */
+@media (max-width: 768px) {
+    .menu-toggle {
+        display: flex;
+    }
+
+    .nav-links {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        background-color: #fff;
+        padding: 2rem;
+        box-shadow: 0 10px 10px rgba(0,0,0,0.1);
+        gap: 1.5rem;
+    }
+
+    .nav-links.active {
+        display: flex;
+    }
+
+    .hero h1 {
+        font-size: 2rem;
+    }
+}
+
+/*  Sustainability section */
+        .sus-hero {
+            background: url('assets/enerplus-sustainability-bg.jpeg') no-repeat center center/cover;
+        }
+
+        .metrics-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .metric-card {
+            background-color: var(--primary-color);
+            color: var(--text-light);
+            text-align: center;
+            padding: 2.5rem 1.5rem;
+            border-radius: 8px;
+            border-bottom: 5px solid var(--secondary-color);
+        }
+
+        .metric-number {
+            font-size: 2.5rem;
+            font-weight: bold;
+            color: #fff;
+            margin-bottom: 0.5rem;
+            display: block;
+        }
+
+        .metric-label {
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: #cbd5e0;
+        }
+
+        .report-section {
+            background-color: var(--bg-light);
+            padding: 5rem 2rem;
+        }
+
+        .report-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            align-items: center;
+            gap: 4rem;
+        }
+
+        .report-content {
+            flex: 1;
+        }
+
+        .report-image {
+            flex: 1;
+            display: flex;
+            justify-content: center;
+        }
+
+        .report-mockup {
+            width: 100%;
+            max-width: 400px;
+            height: 500px;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 15px 30px rgba(0,0,0,0.1);
+            border-left: 15px solid var(--secondary-color);
+            padding: 3rem;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        @media (max-width: 768px) {
+            .report-container {
+                flex-direction: column-reverse;
+                gap: 2rem;
+            }
+        }
+
+/* Privacy Policy Section */
+        .legal-container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 4rem 2rem;
+        }
+
+        .legal-header {
+            border-bottom: 2px solid var(--bg-light);
+            padding-bottom: 1.5rem;
+            margin-bottom: 2.5rem;
+        }
+
+        .legal-header h1 {
+            color: var(--primary-color);
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .last-updated {
+            color: #718096;
+            font-size: 0.9rem;
+            font-style: italic;
+        }
+
+        .legal-content h2 {
+            color: var(--primary-color);
+            font-size: 1.5rem;
+            margin-top: 2.5rem;
+            margin-bottom: 1rem;
+            border-left: 4px solid var(--secondary-color);
+            padding-left: 0.75rem;
+        }
+
+        .legal-content p {
+            color: #4a5568;
+            margin-bottom: 1.25rem;
+            text-align: justify;
+        }
+
+        .legal-content ul {
+            margin-left: 1.5rem;
+            margin-bottom: 1.5rem;
+            color: #4a5568;
+        }
+
+        .legal-content li {
+            margin-bottom: 0.5rem;
+        }
+
+        .contact-card {
+            background-color: var(--bg-light);
+            border: 1px solid #e2e8f0;
+            border-radius: 6px;
+            padding: 1.5rem;
+            margin-top: 2rem;
+        }
+
+
+        /* Careers Page Specific Layouts */
+        .careers-hero {
+            background: linear-gradient(rgba(15, 43, 70, 0.85), rgba(26, 95, 67, 0.8)), url('assets/enerplus-research-lab.jpeg') no-repeat center center/cover;
+        }
+
+        .filter-section {
+            background-color: var(--bg-light);
+            padding: 2rem;
+            border-radius: 8px;
+            margin-bottom: 3rem;
+            display: flex;
+            gap: 1rem;
+            align-items: center;
+        }
+
+        .search-input {
+            flex: 1;
+            padding: 0.75rem 1rem;
+            border: 1px solid #cbd5e0;
+            border-radius: 4px;
+            font-size: 1rem;
+        }
+
+        .search-input:focus {
+            outline: 2px solid var(--secondary-color);
+        }
+
+        .jobs-list {
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+        }
+
+        .job-row {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 2rem;
+            background-color: #fff;
+            border: 1px solid #e2e8f0;
+            border-radius: 6px;
+            transition: var(--transition);
+        }
+
+        .job-row:hover {
+            border-color: var(--secondary-color);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+        }
+
+        .job-info h3 {
+            color: var(--primary-color);
+            margin-bottom: 0.25rem;
+        }
+
+        .job-meta {
+            font-size: 0.9rem;
+            color: #718096;
+            display: flex;
+            gap: 1.5rem;
+        }
+
+        .job-meta span {
+            display: flex;
+            align-items: center;
+            gap: 0.25rem;
+        }
+
+        @media (max-width: 768px) {
+            .filter-section {
+                flex-direction: column;
+                align-items: stretch;
+            }
+            .job-row {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 1.5rem;
+            }
+        }
+
+        /* Operations Page Specific Layouts */
+        .ops-hero {
+            background: linear-gradient(rgba(15, 43, 70, 0.85), rgba(15, 43, 70, 0.85)), url('assets/enerplus-tank.jpeg') no-repeat center center/cover;
+        }
+
+        .filter-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            margin-bottom: 3rem;
+            flex-wrap: wrap;
+        }
+
+        .filter-btn {
+            background-color: var(--bg-light);
+            color: var(--primary-color);
+            border: 2px solid var(--primary-color);
+            padding: 0.75rem 1.5rem;
+            border-radius: 4px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: var(--transition);
+        }
+
+        .filter-btn.active, .filter-btn:hover {
+            background-color: var(--primary-color);
+            color: #fff;
+        }
+
+        .ops-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2.5rem;
+        }
+
+        .ops-card {
+            background-color: #fff;
+            border: 1px solid #e2e8f0;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+            transition: var(--transition);
+        }
+
+        .ops-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 15px rgba(0,0,0,0.1);
+        }
+
+        .ops-card-img {
+            height: 200px;
+            background-size: cover;
+            background-position: center;
+        }
+
+        .ops-card-body {
+            padding: 2rem;
+        }
+
+        .ops-card-body h3 {
+            color: var(--primary-color);
+            margin-bottom: 0.5rem;
+        }
+
+        .ops-badge {
+            display: inline-block;
+            background-color: var(--bg-light);
+            color: var(--secondary-color);
+            padding: 0.25rem 0.75rem;
+            border-radius: 50px;
+            font-size: 0.8rem;
+            font-weight: bold;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin-bottom: 1rem;
+        }
+
+        .ops-stats {
+            margin-top: 1.5rem;
+            padding-top: 1.5rem;
+            border-top: 1px solid #e2e8f0;
+            display: flex;
+            justify-content: space-between;
+            font-size: 0.9rem;
+            color: #4a5568;
+        }
+
+        .ops-stats strong {
+            color: var(--primary-color);
+        }
+
+    
+        /* Company Page Specific Layouts */
+        .company-hero {
+            background: linear-gradient(rgba(15, 43, 70, 0.85), rgba(15, 43, 70, 0.85)), url('assets/enerplus-drilling.jpeg') no-repeat center center/cover;
+        }
+
+        /* Timeline Alignment Layout */
+        .timeline-section {
+            background-color: var(--bg-light);
+            padding: 5rem 2rem;
+        }
+
+        .timeline-container {
+            max-width: 800px;
+            margin: 0 auto;
+            position: relative;
+            padding-left: 2rem;
+            border-left: 4px solid var(--secondary-color);
+        }
+
+        .timeline-item {
+            position: relative;
+            margin-bottom: 3rem;
+        }
+
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: calc(-2rem - 10px);
+            top: 4px;
+            width: 16px;
+            height: 16px;
+            border-radius: 50%;
+            background-color: var(--primary-color);
+            border: 4px solid #fff;
+            box-shadow: 0 0 0 4px var(--secondary-color);
+        }
+
+        .timeline-year {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: var(--secondary-color);
+            margin-bottom: 0.5rem;
+        }
+
+        .timeline-content h3 {
+            color: var(--primary-color);
+            margin-bottom: 0.5rem;
+        }
+
+        /* Leadership Directory Layout */
+        .team-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2.5rem;
+            margin-top: 3rem;
+        }
+
+        .team-card {
+            background-color: #fff;
+            border: 1px solid #e2e8f0;
+            border-radius: 6px;
+            padding: 2rem;
+            text-align: center;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.02);
+            transition: var(--transition);
+        }
+
+        .team-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 15px rgba(0,0,0,0.08);
+            border-color: var(--secondary-color);
+        }
+
+        .team-avatar {
+            width: 100px;
+            height: 100px;
+            background-color: var(--bg-light);
+            border-radius: 50%;
+            margin: 0 auto 1.5rem auto;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2rem;
+            font-weight: bold;
+            color: var(--primary-color);
+            border: 2px solid var(--secondary-color);
+        }
+
+        .team-card h3 {
+            color: var(--primary-color);
+            margin-bottom: 0.25rem;
+        }
+
+        .team-card p {
+            color: var(--secondary-color);
+            font-size: 0.9rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
